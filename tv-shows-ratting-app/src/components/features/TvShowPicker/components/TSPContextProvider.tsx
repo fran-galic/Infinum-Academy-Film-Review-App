@@ -38,7 +38,7 @@ export const TSPContextProvider = ({
   const { data, error, isLoading } = useSWR<IShowsResponse>(swrKeys.shows, getShows);
 
   if (isLoading) {
-   return <LoadingScreen />;
+    //wait
 }
 
    if (error || !data) {

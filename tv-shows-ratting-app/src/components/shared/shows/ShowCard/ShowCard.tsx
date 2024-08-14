@@ -21,7 +21,12 @@ export const ShowCard = ({show : {title, image_url, average_rating, id} } : ISho
          />
          <CardBody>
             <Flex gap='0.4' flexDirection={{ base: "row", sm: "column" }} justify={"space-between"} p={{ base: "2", sm: "0" }} align={"baseline"}>
-               <Heading fontSize='0.9rem' marginBottom="1px" whiteSpace="nowrap" isTruncated>
+               <Heading
+                  fontSize='5.5'
+                  marginBottom="1px"
+                  isTruncated
+                  maxW={"100%"}
+               >
                   {title}
                </Heading>
                <Flex fontSize='xs' gap={1} align="baseline">

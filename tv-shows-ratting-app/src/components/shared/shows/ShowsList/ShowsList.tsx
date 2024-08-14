@@ -47,6 +47,7 @@ export const ShowsList = ({ shows, currentPage = 1, setCurrentPage = () => {}, t
             justifyContent="center" 
             align="center"
             width={"100%"}
+            pr={"10px"}
             >
                <IconButton
                   icon={<ChevronLeftIcon />}

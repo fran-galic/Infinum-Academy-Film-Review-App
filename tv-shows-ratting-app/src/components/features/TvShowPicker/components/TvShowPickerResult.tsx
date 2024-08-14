@@ -5,36 +5,31 @@ import { TSPContext } from './TSPContextProvider';
 export const TvShowPickerResult = () => {
   const { finalRanking } = useContext(TSPContext); 
   return (
-    <>
-      <Text fontSize="title" color="white">
-        This is your current show ranking:
-      </Text>
       <Flex
         mt="10px"
         direction="column"
         overflow="auto"
         height="200px"
-        backgroundColor="white"
-        borderRadius="mdRadius"
+        backgroundColor="grey"
+        borderRadius="1"
         gap={2}
-        padding={4}
+        padding={5}
       >
         {finalRanking.map((show, index) => (
           <Flex key={index}>
-            <Text fontSize="body" fontWeight="bold" color="purple.500">
+            <Text fontSize="body" fontWeight="bold" color="black">
               {index + 1}.
             </Text>
             <Text
               ml="auto"
               fontSize="body"
               fontWeight="bold"
-              color="purple.500"
+              color="black"
             >
               {show.title}
             </Text>
           </Flex>
         ))}
       </Flex>
-    </>
   );
 };

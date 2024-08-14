@@ -29,7 +29,6 @@ export const TvShowPickerStepper = () => {
       setFinalRanking([]);
     }
   }, [allShows, setCurrentStep, setFinalRanking, setRankedShows, setTourSize, tourSize]);
-  //!!! tu ako ce trbeat micat
 
   if (currentStep) return <TvShowPickerStep />;
   else return <TvShowPickerResult />;

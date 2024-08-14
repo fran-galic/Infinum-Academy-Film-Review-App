@@ -10,18 +10,23 @@ export default function RootLayout({
 }>) {
   return (
     <>
-    	<Show below='xl'>
-        <Stack width={"100vw"}>
+      <Show below='xl'>
+        <Stack width={"100vw"} height="100vh">
           <MobileNavigation />
           <Flex
-          overflowY="auto" 
-          sx={{ '::-webkit-scrollbar': { display: 'none' }, '-ms-overflow-style': 'none', 'scrollbar-width': 'none' }}
-          justify={"center"}
+            flex="1"
+            overflowY="auto" 
+            sx={{ 
+              '::-webkit-scrollbar': { display: 'none' }, 
+              '-ms-overflow-style': 'none', 
+              'scrollbar-width': 'none' 
+            }}
+            justify={"center"}
           >
             {children}
           </Flex>
         </Stack>
-			</Show>
+      </Show>
       <Show above='xl'>
         <Flex height="100vh" width={"100vw"}>
             <SidebarNavigation />

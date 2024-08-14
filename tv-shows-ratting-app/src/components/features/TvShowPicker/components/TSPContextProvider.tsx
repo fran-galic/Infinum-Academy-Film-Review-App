@@ -2,6 +2,7 @@ import { LoadingScreen } from '@/components/shared/LoadingScreen/LoadingScreen';
 import { getShows, IShowsResponse } from '@/fetchers/shows';
 import { swrKeys } from '@/fetchers/swrKeys';
 import { IShow } from '@/typings/Show.type';
+import { Button } from '@chakra-ui/react';
 import { createContext, ReactNode, useState } from 'react';
 import useSWR from 'swr';
 
@@ -38,7 +39,13 @@ export const TSPContextProvider = ({
   const { data, error, isLoading } = useSWR<IShowsResponse>(swrKeys.shows, getShows);
 
   if (isLoading) {
-    //wait
+    //vrati gumb ali ne raid
+   return <Button 
+    onClick={() => {}}
+    fontSize={4}
+  >
+    Show picker
+  </Button>
 }
 
    if (error || !data) {

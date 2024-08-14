@@ -4,6 +4,7 @@ import { getShows } from "@/fetchers/shows";
 import { swrKeys } from "@/fetchers/swrKeys";
 import useSWR from "swr";
 import { useState } from "react";
+import { Box } from "@chakra-ui/react";
 
 export interface IgetSignInMutatorParams {
    page: string;

@@ -24,7 +24,7 @@ export const LogOutButton = () => {
                      </ModalBody>
 
                      <ModalFooter>
-                        <Button bg={"darkpurple"} color={"white"} mr={3} onClick={onClose} _hover={{ bg: "purple" }}>
+                        <Button bg={"darkpurple"} color={"white"} mr={3} onClick={onClose} _hover={{ bg: "purple" }} letterSpacing="0.05em">
                            I want to stay
                         </Button>
                         <Button 

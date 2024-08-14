@@ -55,13 +55,12 @@ export const TvShowPickerButtons = ({ onClose }: IPlannerButtons) => {
   const showNextButton = Boolean(currentStep && selected);
 
   return (
-    <Flex>
+    <Flex flexGrow={"1"} columnGap={4} wrap={"wrap"} direction={"row"} align={"center"} justifyContent={"space-between"} rowGap={4}>
       {showNextButton && <Button onClick={() => nextStep()}> Next </Button>}
       {!currentStep && (
         <>
-          <Button onClick={() => nextRound()}> Add show </Button>
+          <Button onClick={() => nextRound()} alignSelf={"flex-start"}> Add show </Button>
           <Button
-            ml="auto"
             onClick={() => {
               startNewTour();
               onClose();

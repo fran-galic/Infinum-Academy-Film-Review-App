@@ -41,10 +41,13 @@ export const TvShowPickerStep = () => {
       {!shouldSkip && (
         <Flex
           px="20px"
-          justifyContent="space-around"
+          justifyContent="space-between"
           width="100%"
           height="auto"
-          direction={{ base: 'column', md: 'row' }} // Promjena smjera ovisno o veličini ekrana
+          direction={{ base: 'column', sm: 'row' }} // Promjena smjera ovisno o veličini ekrana
+          align={"center"}
+          rowGap={"20px"}
+          columnGap={"35px"}
         >
           {[0, 1].map((index) => (
             <PickerCard key={index} index={index} updateRankings={updateRankings} selected={selected} show={shows[index]} />

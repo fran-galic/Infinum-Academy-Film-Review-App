@@ -16,18 +16,20 @@ export const TvShowPickerResult = () => {
         padding={5}
       >
         {finalRanking.map((show, index) => (
-          <Flex key={index}>
+          <Flex key={index} gap={4}>
             <Text fontSize="body" fontWeight="bold" color="black">
               {index + 1}.
             </Text>
-            <Text
-              ml="auto"
-              fontSize="body"
-              fontWeight="bold"
-              color="black"
-            >
-              {show.title}
-            </Text>
+            <Flex wrap={"wrap"}>
+              <Text
+                ml="auto"
+                fontSize="body"
+                fontWeight="bold"
+                color="black"
+              >
+                {show.title}
+              </Text>
+            </Flex>
           </Flex>
         ))}
       </Flex>

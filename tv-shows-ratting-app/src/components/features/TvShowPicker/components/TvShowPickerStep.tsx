@@ -1,6 +1,7 @@
 import { useContext, useEffect, useState } from 'react';
 import { Box, Flex, Image, Text } from '@chakra-ui/react';
 import { TSPContext } from './TSPContextProvider';
+import { PickerCard } from '../PickerCard/PickerCard';
 
 export const TvShowPickerStep = () => {
   const {
@@ -46,42 +47,7 @@ export const TvShowPickerStep = () => {
           direction={{ base: 'column', md: 'row' }} // Promjena smjera ovisno o veličini ekrana
         >
           {[0, 1].map((index) => (
-            <Flex
-              _hover={{ cursor: 'pointer' }}
-              key={index}
-              direction="column"
-              onClick={() => {
-                updateRankings(index);
-              }}
-              width={{ base: '100%', md: '40%' }} // Podešavanje širine ovisno o veličini ekrana
-              mb={{ base: 4, md: 0 }} // Dodavanje donje margine za manje ekrane
-              border="4px"
-              borderColor={selected != index ? 'white' : 'pink'}
-              borderRadius={1}
-              overflow="hidden"
-            >
-              <Image
-                alt="slika showa"
-                src={shows[index].image_url}
-                height="70%"
-                objectFit="cover"
-              />
-                <Box padding={3} backgroundColor="purple" height="100%" color="white">
-                  <Text
-                    display="-webkit-box"
-                    overflow="hidden"
-                    whiteSpace="normal"
-                    textOverflow="ellipsis"
-                    css={{
-                      WebkitLineClamp: 2,
-                      WebkitBoxOrient: "vertical",
-                    }}
-                  >
-                    {shows[index].title}
-                  </Text>
-                  <Text hideBelow="lg">{shows[index].average_rating}/5</Text>
-                </Box>
-            </Flex>
+            <PickerCard key={index} index={index} updateRankings={updateRankings} selected={selected} show={shows[index]} />
           ))}
         </Flex>
       )}

@@ -31,7 +31,7 @@ export const TvShowPicker = () => {
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
         <ModalContent borderRadius={2} p={2} mx={3}>
-          <ModalHeader>Lets see what we are watching tonight: </ModalHeader>
+          <ModalHeader color={"purple"}>Lets see what we are watching tonight: </ModalHeader>
           <ModalBody>
             <TvShowPickerStepper />
           </ModalBody>

@@ -45,7 +45,7 @@ export const ReviewItem = ({review, mutate, show_id} : IReviewItemProps) => {
                   <Flex gap={"4"} order={{ base: 1, md: 1 }}>
                      {review.user.image_url && <Avatar size='sm' src={review.user.image_url} />}
                      <Flex direction={"column"} justify={"start"} align={"start"} gap={2}>
-                        {review.user.email && <Text fontSize='sm' align="center" fontWeight={"bold"}>{review.user.email}</Text>}
+                        {review.user.email && <Text fontSize='sm' align="center" fontWeight={"bold"} letterSpacing="0.03em">{review.user.email}</Text>}
                         <Flex direction={"row"} gap={2}>
                            <Text>{`${review.rating}/5`}</Text>
                            <Box flexGrow={1} gap={1}>

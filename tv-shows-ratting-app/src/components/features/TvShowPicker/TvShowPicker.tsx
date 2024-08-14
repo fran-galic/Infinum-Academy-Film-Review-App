@@ -24,6 +24,7 @@ export const TvShowPicker = () => {
       <Button 
         onClick={handleOpen}
         fontSize={4}
+        fontWeight={"bold"}
       >
         Show picker
       </Button>

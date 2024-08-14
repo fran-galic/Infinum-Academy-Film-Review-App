@@ -109,7 +109,7 @@ export const RegistrationForm = () => {
 
               <Button type="submit" fontSize="sm" variant={"default"} isDisabled={isSubmitting}>{isSubmitting ? <Spinner /> : 'SIGN UP'}</Button>
             </chakra.form>
-            <Text color="white" fontSize={6}>Already have an account? <Text as={NextLink} href="/login" fontWeight="bold">Login</Text></Text>
+            <Text color="white" fontSize={6}>Already have an account? <Text as={NextLink} href="/login" fontWeight="bold" letterSpacing="0.02em">Login</Text></Text>
           </Flex>
     )
   );

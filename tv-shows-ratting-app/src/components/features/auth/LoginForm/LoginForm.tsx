@@ -84,7 +84,7 @@ export const LoginForm = () => {
 
               <Button type="submit" px={7} borderRadius={2} fontSize="sm" color="purple" isDisabled={isSubmitting}>{isSubmitting ? <Spinner /> : 'LOG IN'}</Button>
             </chakra.form>
-            <Text color="white" fontSize={6}>Don't have an account? <Text as={NextLink} href="/register" fontWeight="bold">Register</Text></Text>
+            <Text color="white" fontSize={6}>Don't have an account? <Text as={NextLink} href="/register" fontWeight="bold" letterSpacing="0.02em">Register</Text></Text>
           </Flex>
     )
   );

@@ -36,7 +36,7 @@ export const TSPContextProvider = ({
   const [currentStep, setCurrentStep] = useState(0);
   const [tourSize, setTourSize] = useState(0);
 
-  const { data, error, isLoading } = useSWR<IShowsResponse>(swrKeys.shows, getShows);
+  const { data, error, isLoading } = useSWR<IShowsResponse>(swrKeys.showsPageItems(1, 100), getShows);
 
   if (isLoading) {
     //vrati gumb ali ne raid

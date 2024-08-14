@@ -8,7 +8,7 @@ export const TvShowPickerStepper = () => {
   const {
     currentStep,
     tourSize,
-    allShows,
+    rankedShows,
     setTourSize,
     setRankedShows,
     setCurrentStep,
@@ -16,19 +16,22 @@ export const TvShowPickerStepper = () => {
   } = useContext(TSPContext);
 
   useEffect(() => {
-    if (tourSize === 0 && allShows.length > 0) {
-      let bn = 0;
-      const n = allShows.length;
-      for (bn = 1; bn < n; bn *= 2);
-      const tempArr = [];
-      for (let i = 0; i < 2 * bn; i++) tempArr.push(undefined);
-      for (let i = 0; i < n; i++) tempArr[i + bn] = allShows[i];
+    if (tourSize === 0 && rankedShows.length > 0) {
+      const n = rankedShows.length;
+      let bn = 1;
+      while (bn < n) bn *= 2;
+
+      const tempArr = Array(bn * 2).fill(undefined);
+      for (let i = 0; i < n; i++) {
+        tempArr[i + bn] = rankedShows[i];
+      }
+
       setTourSize(bn);
       setCurrentStep(bn - 1);
       setRankedShows(tempArr as IShow[]);
       setFinalRanking([]);
     }
-  }, [allShows, setCurrentStep, setFinalRanking, setRankedShows, setTourSize, tourSize]);
+  }, [rankedShows, setCurrentStep, setFinalRanking, setRankedShows, setTourSize, tourSize]);
 
   if (currentStep) return <TvShowPickerStep />;
   else return <TvShowPickerResult />;

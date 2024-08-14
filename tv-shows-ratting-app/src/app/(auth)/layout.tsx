@@ -11,7 +11,7 @@ export default function RootLayout({
   return (
     <>
       <Show below='xl'>
-        <Stack width={"100vw"} height="100vh">
+        <Stack width={"100vw"} minHeight="100vh">
           <MobileNavigation />
           <Flex
             flex="1"
@@ -40,10 +40,5 @@ export default function RootLayout({
         </Flex>
 			</Show>
     </>
-    
-      
-
-    
-
   )
 }

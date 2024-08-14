@@ -1,5 +1,6 @@
 import { IShow } from "@/typings/Show.type";
-import { Box, Flex, Text, Image } from "@chakra-ui/react";
+import { StarIcon } from "@chakra-ui/icons";
+import { Box, Flex, Text, Image, Card, CardBody, Heading } from "@chakra-ui/react";
 
 
 interface IPickerCard {
@@ -13,39 +14,43 @@ interface IPickerCard {
 export const PickerCard = ({index, updateRankings, selected, show} : IPickerCard) => {
 
 
-   return (<Flex
-      _hover={{ cursor: 'pointer' }}
-      direction="column"
+   return (
+    <Card 
+      variant={"showCard"} 
+      _hover={{ cursor: 'pointer' }} 
       onClick={() => {
         updateRankings(index);
       }}
-      width={{ base: '100%', md: '40%' }} // Podešavanje širine ovisno o veličini ekrana
-      mb={{ base: 4, md: 0 }} // Dodavanje donje margine za manje ekrane
       border="4px"
       borderColor={selected != index ? 'white' : 'pink'}
-      borderRadius={1}
-      overflow="hidden"
-    >
-      <Image
-        alt="slika showa"
-        src={show.image_url}
-        height="70%"
-        objectFit="cover"
-      />
-        <Box padding={3} backgroundColor="purple" height="100%" color="white">
-          <Text
-            display="-webkit-box"
-            overflow="hidden"
-            whiteSpace="normal"
-            textOverflow="ellipsis"
-            css={{
-              WebkitLineClamp: 2,
-              WebkitBoxOrient: "vertical",
-            }}
-          >
-            {show.title}
-          </Text>
-          <Text hideBelow="lg">{show.average_rating}/5</Text>
-        </Box>
-    </Flex>);
+     >
+         <Image
+         src={show.image_url ?? "https://fakeimg.pl/600x400?text=No+Image"}
+         alt='Series profile image'
+         height="80%"
+         objectFit="cover"
+         />
+         <CardBody color={"white"} backgroundColor={"purple"} >
+            <Flex gap='0.4' flexDirection={{ base: "row", sm: "column" }} justify={"space-between"} p={{ base: "2", sm: "0" }} align={"baseline"}>
+               <Heading
+                  fontSize='5.5'
+                  marginBottom="1px"
+                  isTruncated
+                  maxW={"100%"}
+                  fontWeight={"regular"}
+               >
+                  {show.title}
+               </Heading>
+               <Flex fontSize='xs' gap={1} align="baseline">
+                  <StarIcon
+                     color="white"
+                  />
+                  <Text textAlign="center">
+                   {show.average_rating ? `  ${show.average_rating.toFixed(1)}/5` : "no ratings"}
+                  </Text>
+               </Flex>
+            </Flex>
+         </CardBody>
+      </Card>
+   );
 }

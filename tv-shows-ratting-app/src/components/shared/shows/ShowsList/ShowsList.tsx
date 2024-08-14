@@ -28,14 +28,13 @@ export const ShowsList = ({ shows, currentPage = 1, setCurrentPage = () => {}, t
    };
 
    return (
-      <Stack spacing={2} direction="column" mt={{ base: 0, xl: 7 }} mb={3} px={{ base: 0, xl: 5 }}>
+      <Stack spacing={2} direction="column" mt={{ base: 0, xl: 7 }} mb={3} px={{ base: 0, xl: 5 }} maxWidth="1000px">
          <Flex 
             direction="row"
             wrap="wrap"
             align="start"
             justify={isLargerThanXL ? "start" : "center"}
             gap={8}
-            maxWidth="1000px"
             width={"100%"}
             pb={2}
          >
@@ -44,7 +43,11 @@ export const ShowsList = ({ shows, currentPage = 1, setCurrentPage = () => {}, t
             })}
          </Flex>
          {totalPages > 1 && (
-            <Flex justifyContent="center" align="center">
+            <Flex 
+            justifyContent="center" 
+            align="center"
+            width={"100%"}
+            >
                <IconButton
                   icon={<ChevronLeftIcon />}
                   onClick={handlePrevPage}

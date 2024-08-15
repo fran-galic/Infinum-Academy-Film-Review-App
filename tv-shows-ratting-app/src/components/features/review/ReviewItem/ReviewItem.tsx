@@ -10,6 +10,7 @@ import { EditReviewButton } from "./EditReviewButton/EditReviewButton";
 import { ChevronDownIcon, TriangleDownIcon } from "@chakra-ui/icons";
 import { Icon } from '@chakra-ui/react'
 import { HiDotsVertical } from "react-icons/hi";
+import { DeleteReviewButton } from "./DeleteReviewButton/DeleteReviewButton";
 
 interface IReviewItemProps {
    review: IReview,
@@ -89,21 +90,7 @@ export const ReviewItem = ({review, mutate, show_id} : IReviewItemProps) => {
                                  show_id={show_id} 
                                  review_id={review.id}
                               />
-                                 <Button 
-                                 bg="white" 
-                                 borderRadius='3xl' 
-                                 fontSize='xs' 
-                                 width="70px" 
-                                 size='sm' 
-                                 onClick={trigger} 
-                                 variant={"noButton"} 
-                                 color={"purple"}
-                                 mr="100px"
-                                 sx={{ textAlign: 'left', justifyContent: 'flex-start' }}
-                                 pl={2}
-                                 >
-                                    DELETE
-                                 </Button>
+                              <DeleteReviewButton trigger={trigger}/>
                               </Flex>
                            </MenuList>
                         </Menu>

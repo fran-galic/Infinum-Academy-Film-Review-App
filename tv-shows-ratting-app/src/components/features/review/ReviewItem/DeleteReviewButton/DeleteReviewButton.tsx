@@ -33,7 +33,7 @@ export const DeleteReviewButton = ({ trigger }: DeleteReviewButtonProps) => {
             </ModalBody>
 
             <ModalFooter>
-               <Button bg={"darkpurple"} color={"white"} mr={3} onClick={trigger} _hover={{ bg: "purple" }} letterSpacing="0.05em" width={"auto"}>
+               <Button bg={"darkpurple"} color={"white"} mr={3} onClick={() => {trigger(); onClose();}} _hover={{ bg: "purple" }} letterSpacing="0.05em" width={"auto"}>
                   Yes I don&apos;t like it
                </Button>
                <Button 

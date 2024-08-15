@@ -7,6 +7,7 @@ import NextLink from 'next/link';
 import { useRouter } from "next/navigation";
 import { TvShowPicker } from "@/components/features/TvShowPicker/TvShowPicker";
 import { TSPContextProvider } from "@/components/features/TvShowPicker/components/TSPContextProvider";
+import { LogOutButton } from "../../SidebarNavigation/LogOutButton/LogOutButton";
 
 export function NavigationDrawer() {
    const { isOpen, onOpen, onClose } = useDisclosure();
@@ -86,7 +87,7 @@ export function NavigationDrawer() {
            </DrawerBody>
  
            <DrawerFooter mr="65%" pb={4}>
-            <Button onClick={() => {
+{/*             <Button onClick={() => {
               localStorage.removeItem('userHeaders');
               localStorage.removeItem('user-id');
               router.push('/login');
@@ -95,7 +96,8 @@ export function NavigationDrawer() {
             fontSize={5}
             fontWeight={"normal"}>
               Log out
-            </Button>
+            </Button> */}
+            <LogOutButton />
            </DrawerFooter>
          </DrawerContent>
        </Drawer>

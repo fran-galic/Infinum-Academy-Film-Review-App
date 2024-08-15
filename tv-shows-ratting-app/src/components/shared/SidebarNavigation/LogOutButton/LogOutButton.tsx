@@ -11,12 +11,12 @@ export const LogOutButton = () => {
 
    return (
    <>
-      <Button width="50%" onClick={onOpen} variant={"noButton"} fontSize={5}>
+      <Button width="50%" onClick={onOpen} variant={"noButton"} fontSize={5} fontWeight={"bold"} letterSpacing="0.02em">
          Log out
       </Button>
             <Modal isOpen={isOpen} onClose={onClose}  >
             <ModalOverlay />
-                  <ModalContent borderRadius={1} p={2}>
+                  <ModalContent borderRadius={1} p={2} maxW={"90%"} width={"md"}>
                      <ModalBody>
                         <Text fontSize='xl'>
                         Are you sure you want to log out?

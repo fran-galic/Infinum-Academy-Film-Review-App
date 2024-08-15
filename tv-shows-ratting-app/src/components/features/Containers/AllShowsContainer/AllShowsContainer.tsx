@@ -4,7 +4,7 @@ import { getShows } from "@/fetchers/shows";
 import { swrKeys } from "@/fetchers/swrKeys";
 import useSWR from "swr";
 import { useState } from "react";
-import { Box } from "@chakra-ui/react";
+import { Box, useBreakpointValue } from "@chakra-ui/react";
 
 export interface IgetSignInMutatorParams {
    page: string;
@@ -13,9 +13,9 @@ export interface IgetSignInMutatorParams {
 
 export const AllShowsContainer = () => {
    const [currentPage, setCurrentPage] = useState(1);
-   const itemsPerPage = 20;
+   const itemsPerPage = useBreakpointValue({ base: 10, sm: 20 });
 
-   const { data, error, isLoading } = useSWR(swrKeys.showsPageItems(currentPage, itemsPerPage), getShows);
+   const { data, error, isLoading } = useSWR(swrKeys.showsPageItems(currentPage, itemsPerPage as number), getShows);
 
    if (isLoading) {
       return <LoadingScreen />;

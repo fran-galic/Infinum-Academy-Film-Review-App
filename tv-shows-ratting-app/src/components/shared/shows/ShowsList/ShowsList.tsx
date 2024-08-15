@@ -28,7 +28,7 @@ export const ShowsList = ({ shows, currentPage = 1, setCurrentPage = () => {}, t
    };
 
    return (
-      <Flex gap={2} flexDirection={"column"} mt={{ base: 0, xl: 7 }} mb={3} px={{ base: 0, xl: 5 }} maxWidth="1000px" align={{ base: "center", sm: "start" }}>
+      <Flex gap={2} flexDirection={"column"} mt={{ base: 0, xl: 7 }} mb={3} px={5} maxWidth="1000px" align={{ base: "center", sm: "start" }}>
          <Flex 
             direction="row"
             wrap="wrap"

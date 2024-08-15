@@ -7,7 +7,7 @@ import { NavigationDrawer } from "./NavigationDrawer/NavigationDrawer";
 export const MobileNavigation = () => {
 
    return (
-      <Flex justify={"space-between"} gap={4} p={5} width={"95vw"} align={"center"} pr={2} pb={5}>
+      <Flex justify={"space-between"} gap={4} p={5} width={"95vw"} align={"center"} pr={2} pb={3}>
          <SiteLogo />
          <NavigationDrawer />
       </Flex>

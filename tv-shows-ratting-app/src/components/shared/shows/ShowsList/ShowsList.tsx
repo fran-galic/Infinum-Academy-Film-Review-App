@@ -15,7 +15,7 @@ export interface IShowsList {
 }
 
 export const ShowsList = ({ shows, currentPage = 1, setCurrentPage = () => {}, totalItems = 0, itemsPerPage = 25 }: IShowsList) => {
-   const [isLargerThanXL] = useMediaQuery("(min-width: 1280px)"); 
+   /* const [isLargerThanXL] = useMediaQuery("(min-width: 1280px)");  jos jedna moguncost*/
 
    const totalPages = Math.ceil(totalItems / itemsPerPage);
 
@@ -28,14 +28,14 @@ export const ShowsList = ({ shows, currentPage = 1, setCurrentPage = () => {}, t
    };
 
    return (
-      <Stack spacing={2} direction="column" mt={{ base: 0, xl: 7 }} mb={3} px={{ base: 0, xl: 5 }} maxWidth="1000px">
+      <Flex gap={2} flexDirection={"column"} mt={{ base: 0, xl: 7 }} mb={3} px={{ base: 0, xl: 5 }} maxWidth="1000px" align={{ base: "center", sm: "start" }}>
          <Flex 
             direction="row"
             wrap="wrap"
-            align="start"
-            justify={isLargerThanXL ? "start" : "center"}
+            align="end"
+            justify={{ base: "center", xl: "start" }}
             gap={8}
-            width={"100%"}
+            width={{ base: "80%", sm: "100%" }}
             pb={2}
          >
             {shows.map((show) => {
@@ -72,6 +72,6 @@ export const ShowsList = ({ shows, currentPage = 1, setCurrentPage = () => {}, t
                />
             </Flex>
          )}
-      </Stack>
+      </Flex>
    );
 }

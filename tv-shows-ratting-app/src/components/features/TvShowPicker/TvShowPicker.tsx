@@ -46,13 +46,13 @@ export const TvShowPicker = () => {
       </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent borderRadius={2}  width={"auto"} maxWidth={"90vw"} >
+        <ModalContent borderRadius={2}  width={"auto"} maxWidth={"90vw"} pt={2}>
           <ModalHeader color={"purple"}>Let&apos;s see what we are watching tonight: </ModalHeader>
           <ModalBody>
             <TvShowPickerStepper />
           </ModalBody>
           <ModalFooter>
-            <Flex direction="row" width="100%">
+            <Flex direction="row" width="100%" pb={2}>
               <TvShowPickerButtons onClose={onClose} />
             </Flex>
           </ModalFooter>

@@ -1,4 +1,4 @@
-import { Button, Modal, ModalBody, ModalContent, ModalFooter, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
+import { Button, Flex, Modal, ModalBody, ModalContent, ModalFooter, ModalOverlay, Text, useDisclosure } from "@chakra-ui/react";
 
 
 interface DeleteReviewButtonProps {
@@ -25,7 +25,7 @@ export const DeleteReviewButton = ({ trigger }: DeleteReviewButtonProps) => {
       </Button>
       <Modal isOpen={isOpen} onClose={onClose} >
         <ModalOverlay />
-        <ModalContent borderRadius={2} mx={2} p={2}>
+        <ModalContent borderRadius={2} mx={2} p={2} maxWidth={"90%"} width={"md"}>
          <ModalBody>
                <Text fontSize='xl'>
                Are you sure you want to delete this comment?
@@ -33,16 +33,18 @@ export const DeleteReviewButton = ({ trigger }: DeleteReviewButtonProps) => {
             </ModalBody>
 
             <ModalFooter>
-               <Button bg={"darkpurple"} color={"white"} mr={3} onClick={() => {trigger(); onClose();}} _hover={{ bg: "purple" }} letterSpacing="0.05em" width={"auto"}>
-                  Yes I don&apos;t like it
-               </Button>
-               <Button 
-               variant='ghost'
-               onClick={() => {onClose()}}
-               width={"auto"}
-               >
-               No, I changed my mind
-               </Button>
+               <Flex direction={"row"} wrap={{ base: "wrap", sm: "nowrap" }} rowGap={2} justify={"flex-end"}>
+                <Button bg={"darkpurple"} color={"white"} mr={3} onClick={() => {trigger(); onClose();}} _hover={{ bg: "purple" }} letterSpacing="0.05em" width={"auto"}>
+                    Yes I don&apos;t like it
+                </Button>
+                <Button 
+                variant='ghost'
+                onClick={() => {onClose()}}
+                width={"auto"}
+                >
+                No, I changed my mind
+                </Button>
+               </Flex>
             </ModalFooter>
         </ModalContent>
       </Modal>

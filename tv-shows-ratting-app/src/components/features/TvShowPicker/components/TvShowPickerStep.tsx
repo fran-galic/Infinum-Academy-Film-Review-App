@@ -30,6 +30,7 @@ export const TvShowPickerStep = () => {
       else setCurrentStep(Math.ceil(currentStep / 2));
       return;
     }
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [currentStep]);
   const shouldSkip = !shows[0] || !shows[1];
   return (

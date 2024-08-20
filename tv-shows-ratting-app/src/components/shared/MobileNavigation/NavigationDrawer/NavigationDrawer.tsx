@@ -130,16 +130,6 @@ export function NavigationDrawer() {
           </DrawerBody>
 
           <DrawerFooter mr="65%" pb={4}>
-            {/*             <Button onClick={() => {
-              localStorage.removeItem('userHeaders');
-              localStorage.removeItem('user-id');
-              router.push('/login');
-            }} 
-            variant={"noButton"} 
-            fontSize={5}
-            fontWeight={"normal"}>
-              Log out
-            </Button> */}
             <LogOutButton />
           </DrawerFooter>
         </DrawerContent>

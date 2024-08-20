@@ -9,20 +9,20 @@ import { render, screen } from '@testing-library/react';
 
 describe('ReviewForm', () => {
   it('should render input comment', () => {
-    render(<ReviewForm onAdd={() => {}} />);
+    render(<ReviewForm show_id={''} />);
     const inputComment = screen.getByPlaceholderText('Add review');
     expect(inputComment).toBeInTheDocument();
   });
 
   //u ovom slucaju star-rating
   it('should render rating component', () => {
-    render(<ReviewForm onAdd={() => {}} />);
+    render(<ReviewForm show_id={''}  />);
     const starRating = screen.getByTestId('star-rating');
     expect(starRating).toBeInTheDocument();
   });
 
   it('should render button component', () => {
-    render(<ReviewForm onAdd={() => {}} />);
+    render(<ReviewForm show_id={''} />);
     const postButton = screen.getByRole('button');
     expect(postButton).toBeInTheDocument();
   });

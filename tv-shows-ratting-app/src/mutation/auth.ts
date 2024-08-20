@@ -9,7 +9,7 @@ export async function registerAccount(
     method: 'POST',
     body: JSON.stringify(arg),
   });
-  localStorage.setItem('user-id', data.user.id);
+  localStorage.setItem('user-id', (data as IUser).user.id);
   return data;
 }
 
@@ -18,6 +18,6 @@ export async function loginUser(url: string, { arg }: { arg: ILoginData }) {
     method: 'POST',
     body: JSON.stringify(arg),
   });
-  localStorage.setItem('user-id', data.user.id);
+  localStorage.setItem('user-id', (data as IUser).user.id);
   return data;
 }

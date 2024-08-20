@@ -14,7 +14,13 @@ export async function getProfileData(
   url: string,
   { arg }: { arg?: any } = {}
 ): Promise<IUserDataResponse> {
-  return fetcher<IUserDataResponse>(url, {
+  const result = await fetcher<IUserDataResponse>(url, {
     method: 'GET',
   });
+
+  if (result === undefined) {
+    throw new Error('Failed to fetch profile data');
+  }
+
+  return result;
 }

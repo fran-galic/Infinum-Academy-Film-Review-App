@@ -9,9 +9,15 @@ export async function getReviews(
   url: string,
   { arg }: { arg?: any } = {}
 ): Promise<IReviewList> {
-  return fetcher<IReviewList>(url, {
+  const result = await fetcher<IReviewList>(url, {
     method: 'GET',
   });
+
+  if (result === undefined) {
+    throw new Error('Failed to fetch reviews');
+  }
+
+  return result;
 }
 
 export async function postReview(

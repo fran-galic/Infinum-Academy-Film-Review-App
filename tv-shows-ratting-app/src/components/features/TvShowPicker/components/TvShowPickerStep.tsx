@@ -4,15 +4,11 @@ import { PickerCard } from '../PickerCard/PickerCard';
 import { useContext, useEffect, useState } from 'react';
 
 export const TvShowPickerStep = () => {
-  const {
-    rankedShows,
-    currentStep,
-    setRankedShows,
-    setCurrentStep,
-  } = useContext(TSPContext);
+  const { rankedShows, currentStep, setRankedShows, setCurrentStep } =
+    useContext(TSPContext);
 
   let targetIndex = Math.abs(currentStep);
-  let shows = [rankedShows[targetIndex * 2], rankedShows[targetIndex * 2 + 1]]; 
+  let shows = [rankedShows[targetIndex * 2], rankedShows[targetIndex * 2 + 1]];
   let startState = 2;
   if (rankedShows[targetIndex] == rankedShows[targetIndex * 2]) startState = 0;
   else if (rankedShows[targetIndex] != rankedShows[targetIndex * 2 + 1])
@@ -45,12 +41,18 @@ export const TvShowPickerStep = () => {
           width="100%"
           height="auto"
           direction={{ base: 'column', sm: 'row' }} // Promjena smjera ovisno o veličini ekrana
-          align={"center"}
-          rowGap={"20px"}
-          columnGap={"35px"}
+          align={'center'}
+          rowGap={'20px'}
+          columnGap={'35px'}
         >
           {[0, 1].map((index) => (
-            <PickerCard key={index} index={index} updateRankings={updateRankings} selected={selected} show={shows[index]} />
+            <PickerCard
+              key={index}
+              index={index}
+              updateRankings={updateRankings}
+              selected={selected}
+              show={shows[index]}
+            />
           ))}
         </Flex>
       )}

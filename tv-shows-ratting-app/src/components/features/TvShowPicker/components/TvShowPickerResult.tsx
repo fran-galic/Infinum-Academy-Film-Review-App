@@ -3,11 +3,11 @@ import { Flex, Text } from '@chakra-ui/react';
 import { TSPContext } from './TSPContextProvider';
 
 export const TvShowPickerResult = () => {
-  const { finalRanking } = useContext(TSPContext); 
+  const { finalRanking } = useContext(TSPContext);
 
   // Provjera sadržaja `finalRanking`
   useEffect(() => {
-    console.log("Final ranking:", finalRanking);
+    console.log('Final ranking:', finalRanking);
   }, [finalRanking]);
 
   return (
@@ -27,13 +27,8 @@ export const TvShowPickerResult = () => {
             <Text fontSize="body" fontWeight="bold" color="black">
               {index + 1}.
             </Text>
-            <Flex wrap={"wrap"}>
-              <Text
-                ml="auto"
-                fontSize="body"
-                fontWeight="bold"
-                color="black"
-              >
+            <Flex wrap={'wrap'}>
+              <Text ml="auto" fontSize="body" fontWeight="bold" color="black">
                 {show.title}
               </Text>
             </Flex>

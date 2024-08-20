@@ -1,77 +1,105 @@
 'use client';
 
 import React, { useState } from 'react';
-import { Box, Button, Input, Stack, Textarea, Text, Flex, Spinner, FormControl, FormErrorMessage } from "@chakra-ui/react";
-import { useForm, Controller } from "react-hook-form";
-import { ICreateReviewData, IReview } from "@/typings/Review.type";
+import {
+  Box,
+  Button,
+  Input,
+  Stack,
+  Textarea,
+  Text,
+  Flex,
+  Spinner,
+  FormControl,
+  FormErrorMessage,
+} from '@chakra-ui/react';
+import { useForm, Controller } from 'react-hook-form';
+import { ICreateReviewData, IReview } from '@/typings/Review.type';
 import useSWRMutation from 'swr/mutation';
 import { swrKeys } from '@/fetchers/swrKeys';
 import { postReview } from '@/mutation/reviews';
 import { mutate } from 'swr';
-import { StarRating } from "../../review/StarRating/StarRating";
+import { StarRating } from '../../review/StarRating/StarRating';
 
 interface IReviewFormProps {
-  show_id: string
+  show_id: string;
 }
 
 interface IReviewFormInputs {
-  grade: number,
-  description: string,
+  grade: number;
+  description: string;
 }
 
 export const ReviewForm = ({ show_id }: IReviewFormProps) => {
+  const {
+    control,
+    register,
+    handleSubmit,
+    formState: { errors, isSubmitting },
+    setValue,
+    clearErrors,
+  } = useForm<IReviewFormInputs>();
 
-  const { control, register, handleSubmit, formState: { errors, isSubmitting }, setValue, clearErrors } = useForm<IReviewFormInputs>();
-
-  const { trigger } = useSWRMutation(swrKeys.reviews , postReview,
-    {
-      onSuccess: () => {
-        console.log("Reviews se revaliditiraju");
-        mutate(swrKeys.allReviews(show_id, 1, 100));
-      },
-    }
-  );
+  const { trigger } = useSWRMutation(swrKeys.reviews, postReview, {
+    onSuccess: () => {
+      console.log('Reviews se revaliditiraju');
+      mutate(swrKeys.allReviews(show_id, 1, 100));
+    },
+  });
 
   const addShowReview = async (data: IReviewFormInputs) => {
     const newReviewData: ICreateReviewData = {
       comment: data.description,
       rating: data.grade,
-      show_id: show_id
+      show_id: show_id,
     };
-    
+
     setValue('grade', 0);
-    setValue('description', "");
+    setValue('description', '');
 
     await trigger(newReviewData);
-    console.log("Adding");
+    console.log('Adding');
   };
 
   return (
-    <Flex direction={"column"} justify={"start"} as="form" gap={{base: 1, sm: 4}} onSubmit={handleSubmit(addShowReview)}>
+    <Flex
+      direction={'column'}
+      justify={'start'}
+      as="form"
+      gap={{ base: 1, sm: 4 }}
+      onSubmit={handleSubmit(addShowReview)}
+    >
       <FormControl isInvalid={!!errors.description} flexGrow={1}>
-        <Textarea 
-          placeholder="Add review" 
+        <Textarea
+          placeholder="Add review"
           borderRadius={2}
-          bg="white" 
-          fontSize={5} 
-          color="purple" 
-          id="text-input" 
-          {...register('description', { required: 'Description is required' })} 
+          bg="white"
+          fontSize={5}
+          color="purple"
+          id="text-input"
+          {...register('description', { required: 'Description is required' })}
           isDisabled={isSubmitting}
-          width={"100%"}
+          width={'100%'}
           height="auto"
           pt={7}
           _placeholder={{ color: 'purple' }}
           borderColor="purple"
           borderWidth={2}
-          _hover={{ borderColor: "purple" }}
-          _focus={{ borderColor: "purple", boxShadow: 'none' }}
-          _invalid={{ borderColor: "pink" }}
+          _hover={{ borderColor: 'purple' }}
+          _focus={{ borderColor: 'purple', boxShadow: 'none' }}
+          _invalid={{ borderColor: 'pink' }}
         />
-        <FormErrorMessage color="pink">{errors.description?.message}</FormErrorMessage>
+        <FormErrorMessage color="pink">
+          {errors.description?.message}
+        </FormErrorMessage>
       </FormControl>
 
-      <Flex justify={"space-between"} pl={{base: 0, sm: 10}} pt={2} align={"center"}>
+      <Flex
+        justify={'space-between'}
+        pl={{ base: 0, sm: 10 }}
+        pt={2}
+        align={'center'}
+      >
         <FormControl isInvalid={!!errors.grade}>
           <Flex gap={4} align="baseline">
             <Text>Rating</Text>
@@ -80,9 +108,9 @@ export const ReviewForm = ({ show_id }: IReviewFormProps) => {
                 name="grade"
                 control={control}
                 defaultValue={0}
-                rules={{ 
-                  required: 'Rating is required', 
-                  validate: value => value > 0 || 'You must select a rating'
+                rules={{
+                  required: 'Rating is required',
+                  validate: (value) => value > 0 || 'You must select a rating',
                 }}
                 render={({ field }) => (
                   <StarRating
@@ -99,14 +127,12 @@ export const ReviewForm = ({ show_id }: IReviewFormProps) => {
               />
             </Box>
           </Flex>
-          <FormErrorMessage color="pink">{errors.grade?.message}</FormErrorMessage>
+          <FormErrorMessage color="pink">
+            {errors.grade?.message}
+          </FormErrorMessage>
         </FormControl>
 
-        <Button 
-          type="submit" 
-          isDisabled={isSubmitting}
-          variant={"default"}
-        >
+        <Button type="submit" isDisabled={isSubmitting} variant={'default'}>
           {isSubmitting ? <Spinner /> : 'Post'}
         </Button>
       </Flex>

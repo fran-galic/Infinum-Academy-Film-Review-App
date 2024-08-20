@@ -1,8 +1,8 @@
 'use client';
 
-import { StarIcon } from "@chakra-ui/icons";
-import { Flex } from "@chakra-ui/react";
-import { useState } from "react";
+import { StarIcon } from '@chakra-ui/icons';
+import { Flex } from '@chakra-ui/react';
+import { useState } from 'react';
 
 interface StarRatingProps {
   noOfStars: number;
@@ -13,7 +13,14 @@ interface StarRatingProps {
   color?: string;
 }
 
-export const StarRating = ({ noOfStars, isStatic, onClick, onHover, data_testid, color = "white" }: StarRatingProps) => {
+export const StarRating = ({
+  noOfStars,
+  isStatic,
+  onClick,
+  onHover,
+  data_testid,
+  color = 'white',
+}: StarRatingProps) => {
   const [hoveredRating, setHoveredRating] = useState<number>(0); // Drži trenutno hoveranu ocjenu
 
   const handleMouseOver = (index: number) => {
@@ -37,7 +44,7 @@ export const StarRating = ({ noOfStars, isStatic, onClick, onHover, data_testid,
 
   const renderStars = Array.from({ length: 5 }, (_, i) => {
     const index = i + 1;
-    const fillColor = index <= (hoveredRating || noOfStars) ? color : "purple";
+    const fillColor = index <= (hoveredRating || noOfStars) ? color : 'purple';
 
     return (
       <Flex
@@ -60,4 +67,4 @@ export const StarRating = ({ noOfStars, isStatic, onClick, onHover, data_testid,
       {renderStars}
     </Flex>
   );
-}
+};

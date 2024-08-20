@@ -4,28 +4,26 @@
    + 3. check if button component is rendered
 */
 
-import { ReviewForm } from "./ReviewForm";
+import { ReviewForm } from './ReviewForm';
 import { render, screen } from '@testing-library/react';
 
-describe("ReviewForm", () => {
+describe('ReviewForm', () => {
+  it('should render input comment', () => {
+    render(<ReviewForm onAdd={() => {}} />);
+    const inputComment = screen.getByPlaceholderText('Add review');
+    expect(inputComment).toBeInTheDocument();
+  });
 
-   it("should render input comment", () => {
-      render(<ReviewForm onAdd={() => {}} />);
-      const inputComment = screen.getByPlaceholderText('Add review');
-      expect(inputComment).toBeInTheDocument();
-   });
+  //u ovom slucaju star-rating
+  it('should render rating component', () => {
+    render(<ReviewForm onAdd={() => {}} />);
+    const starRating = screen.getByTestId('star-rating');
+    expect(starRating).toBeInTheDocument();
+  });
 
-   //u ovom slucaju star-rating
-   it("should render rating component", () => {
-      render(<ReviewForm onAdd={() => {}} />);
-      const starRating = screen.getByTestId('star-rating');
-      expect(starRating).toBeInTheDocument();
-   });
-
-   it("should render button component", () => {
-      render(<ReviewForm onAdd={() => {}} />);
-      const postButton = screen.getByRole("button");
-      expect(postButton).toBeInTheDocument();
-   });
-
-})
+  it('should render button component', () => {
+    render(<ReviewForm onAdd={() => {}} />);
+    const postButton = screen.getByRole('button');
+    expect(postButton).toBeInTheDocument();
+  });
+});

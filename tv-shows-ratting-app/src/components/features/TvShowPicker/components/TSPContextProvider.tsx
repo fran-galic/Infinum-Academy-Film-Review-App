@@ -14,7 +14,7 @@ interface ITvShowPickerContext {
   //ovo dvoje cu jos vidit jel mi treba
   tourSize: number;
   setTourSize: (newTourSize: number) => void;
-  
+
   finalRanking: Array<IShow>;
   setFinalRanking: (newFinalRanking: Array<IShow>) => void;
   allShows: Array<IShow>;
@@ -22,7 +22,7 @@ interface ITvShowPickerContext {
 
 export const TSPContext = createContext<ITvShowPickerContext>(
   {} as ITvShowPickerContext
-)
+);
 
 interface ITvShowPickerProviderProps {
   children: ReactNode;
@@ -36,21 +36,23 @@ export const TSPContextProvider = ({
   const [currentStep, setCurrentStep] = useState(0);
   const [tourSize, setTourSize] = useState(0);
 
-  const { data, error, isLoading } = useSWR<IShowsResponse>(swrKeys.showsPageItems(1, 100), getShows);
+  const { data, error, isLoading } = useSWR<IShowsResponse>(
+    swrKeys.showsPageItems(1, 100),
+    getShows
+  );
 
   if (isLoading) {
     //vrati gumb ali ne raid
-   return <Button 
-    onClick={() => {}}
-    fontSize={4}
-  >
-    Show picker
-  </Button>
-}
+    return (
+      <Button onClick={() => {}} fontSize={4}>
+        Show picker
+      </Button>
+    );
+  }
 
-   if (error || !data) {
-   return <div>Ups something went wrong...</div>;
-}
+  if (error || !data) {
+    return <div>Ups something went wrong...</div>;
+  }
 
   return (
     <TSPContext.Provider

@@ -1,13 +1,13 @@
 import { render, screen } from '@testing-library/react';
 import { ReviewList } from './ReviewList';
 import { ReviewItem } from '../ReviewItem/ReviewItem';
-import { IReviewList } from "@/typings/Review.type";
+import { IReviewList } from '@/typings/Review.type';
 
 jest.mock('../ReviewItem/ReviewItem', () => ({
-  ReviewItem: jest.fn(({ review }) => <div>{review.comment}</div>)
+  ReviewItem: jest.fn(({ review }) => <div>{review.comment}</div>),
 }));
 
-describe("ReviewList", () => {
+describe('ReviewList', () => {
   const mockReviewList: IReviewList = {
     reviews: [
       {
@@ -46,30 +46,36 @@ describe("ReviewList", () => {
     ],
   };
 
-  it("should render all reviews", () => {
+  it('should render all reviews', () => {
     render(<ReviewList reviewList={mockReviewList} show_id="101" />);
-    const reviewsNumber = screen.getAllByText(/Great show!|Not bad|Could be better/).length;
+    const reviewsNumber = screen.getAllByText(
+      /Great show!|Not bad|Could be better/
+    ).length;
     expect(reviewsNumber).toEqual(mockReviewList.reviews.length);
   });
 
-  it("should call ReviewItem with appropriate props", () => {
+  it('should call ReviewItem with appropriate props', () => {
     render(<ReviewList reviewList={mockReviewList} show_id="101" />);
     mockReviewList.reviews.forEach((review, index) => {
-      expect(ReviewItem).toHaveBeenNthCalledWith(index + 1, expect.objectContaining({
-        review: expect.objectContaining({
-          id: review.id,
-          comment: review.comment,
-          rating: review.rating,
-          show_id: review.show_id,
-          user: expect.objectContaining({
-            id: review.user.id,
-            email: review.user.email,
-            image_url: review.user.image_url,
+      expect(ReviewItem).toHaveBeenNthCalledWith(
+        index + 1,
+        expect.objectContaining({
+          review: expect.objectContaining({
+            id: review.id,
+            comment: review.comment,
+            rating: review.rating,
+            show_id: review.show_id,
+            user: expect.objectContaining({
+              id: review.user.id,
+              email: review.user.email,
+              image_url: review.user.image_url,
+            }),
           }),
+          mutate: expect.any(Function),
+          show_id: '101',
         }),
-        mutate: expect.any(Function),
-        show_id: "101",
-      }), {});
+        {}
+      );
     });
   });
 });

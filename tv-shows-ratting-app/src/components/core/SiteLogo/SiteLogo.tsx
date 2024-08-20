@@ -1,12 +1,7 @@
-"use client"
+'use client';
 
-import { Heading } from "@chakra-ui/react";
+import { Heading } from '@chakra-ui/react';
 
 export const SiteLogo = () => {
-
-   return (
-      <Heading size='md'>
-         TV shows APP
-      </Heading>
-   );
-}
+  return <Heading size="md">TV shows APP</Heading>;
+};

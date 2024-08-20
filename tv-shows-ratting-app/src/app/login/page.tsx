@@ -7,9 +7,8 @@ export default function LoginPage() {
     <>
       <AuthRedirect to="/all-shows" condition="isLoggedIn" />
       <Center width="100vw" height="100vh">
-         <LoginForm />
+        <LoginForm />
       </Center>
     </>
-
   );
 }

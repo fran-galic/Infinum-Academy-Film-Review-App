@@ -1,6 +1,16 @@
 'use client';
 
-import { Button, Flex, Modal, ModalBody, ModalContent, ModalFooter, ModalHeader, ModalOverlay, useDisclosure } from '@chakra-ui/react';
+import {
+  Button,
+  Flex,
+  Modal,
+  ModalBody,
+  ModalContent,
+  ModalFooter,
+  ModalHeader,
+  ModalOverlay,
+  useDisclosure,
+} from '@chakra-ui/react';
 import { TvShowPickerStepper } from './components/TvShowPickerStepper';
 import { TvShowPickerButtons } from './components/TvShowPickerButtons';
 import { useContext } from 'react';
@@ -9,7 +19,13 @@ import { IShow } from '@/typings/Show.type';
 
 export const TvShowPicker = () => {
   const { isOpen, onOpen, onClose } = useDisclosure();
-  const { setTourSize, setCurrentStep, setFinalRanking, setRankedShows, allShows } = useContext(TSPContext);
+  const {
+    setTourSize,
+    setCurrentStep,
+    setFinalRanking,
+    setRankedShows,
+    allShows,
+  } = useContext(TSPContext);
 
   const handleOpen = () => {
     setTourSize(0);
@@ -21,7 +37,10 @@ export const TvShowPicker = () => {
       const shuffledArray = [...array];
       for (let i = shuffledArray.length - 1; i > 0; i--) {
         const j = Math.floor(Math.random() * (i + 1));
-        [shuffledArray[i], shuffledArray[j]] = [shuffledArray[j], shuffledArray[i]];
+        [shuffledArray[i], shuffledArray[j]] = [
+          shuffledArray[j],
+          shuffledArray[i],
+        ];
       }
       return shuffledArray;
     };
@@ -36,18 +55,16 @@ export const TvShowPicker = () => {
   };
 
   return (
-    <Flex justify={"start"}>
-      <Button 
-        onClick={handleOpen}
-        fontSize={4}
-        fontWeight={"bold"}
-      >
+    <Flex justify={'start'}>
+      <Button onClick={handleOpen} fontSize={4} fontWeight={'bold'}>
         Show picker
       </Button>
       <Modal isOpen={isOpen} onClose={onClose}>
         <ModalOverlay />
-        <ModalContent borderRadius={2}  width={"auto"} maxWidth={"90vw"} pt={2}>
-          <ModalHeader color={"purple"}>Let&apos;s see what we are watching tonight: </ModalHeader>
+        <ModalContent borderRadius={2} width={'auto'} maxWidth={'90vw'} pt={2}>
+          <ModalHeader color={'purple'}>
+            Let&apos;s see what we are watching tonight:{' '}
+          </ModalHeader>
           <ModalBody>
             <TvShowPickerStepper />
           </ModalBody>

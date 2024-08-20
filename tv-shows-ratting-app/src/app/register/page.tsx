@@ -3,7 +3,7 @@ import { RegistrationForm } from '@/components/features/auth/RegistrationForm/Re
 import { AuthRedirect } from '@/components/shared/auth/AuthRedirect/AuthRedirect';
 
 export default function RegisterPage() {
-  return (      
+  return (
     <>
       <AuthRedirect to="/all-shows" condition="isLoggedIn" />
       <Center width="100vw" height="100vh">

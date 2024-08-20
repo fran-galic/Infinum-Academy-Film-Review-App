@@ -31,7 +31,14 @@ export const TvShowPickerStepper = () => {
       setRankedShows(tempArr as IShow[]);
       setFinalRanking([]);
     }
-  }, [rankedShows, setCurrentStep, setFinalRanking, setRankedShows, setTourSize, tourSize]);
+  }, [
+    rankedShows,
+    setCurrentStep,
+    setFinalRanking,
+    setRankedShows,
+    setTourSize,
+    tourSize,
+  ]);
 
   if (currentStep) return <TvShowPickerStep />;
   else return <TvShowPickerResult />;

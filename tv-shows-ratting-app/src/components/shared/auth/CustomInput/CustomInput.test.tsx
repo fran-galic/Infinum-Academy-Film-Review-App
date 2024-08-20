@@ -19,7 +19,9 @@ describe('CustomInput', () => {
         isDisabled={false}
         testId="email"
         placeholder="Email"
-        icon={<EmailIcon />} name={'Email'}      />
+        icon={<EmailIcon />}
+        name={'Email'}
+      />
     );
     const icon = screen.getByTestId('email').previousSibling;
     expect(icon).toBeInTheDocument();
@@ -34,7 +36,7 @@ describe('CustomInput', () => {
         testId="email"
         placeholder="Email"
         icon={<EmailIcon />}
-        name={'Email'} 
+        name={'Email'}
       />
     );
     const input = screen.getByPlaceholderText('Email');
@@ -50,7 +52,7 @@ describe('CustomInput', () => {
         testId="email"
         placeholder="Email"
         icon={<EmailIcon />}
-        name={'Email'} 
+        name={'Email'}
       />
     );
     const input = screen.getByPlaceholderText('Email');
@@ -66,7 +68,7 @@ describe('CustomInput', () => {
         testId="email"
         placeholder="Email"
         icon={<EmailIcon />}
-        name={'Email'} 
+        name={'Email'}
       />
     );
     const input = screen.getByTestId('email');

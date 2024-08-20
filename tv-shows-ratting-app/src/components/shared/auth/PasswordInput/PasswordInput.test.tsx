@@ -20,7 +20,9 @@ describe('PasswordInput', () => {
         isDisabled={false}
         testId="password"
         placeholder="Password"
-        icon={<EmailIcon />} name={'Password'}     />
+        icon={<EmailIcon />}
+        name={'Password'}
+      />
     );
     const icon = screen.getByPlaceholderText('Password').previousSibling;
     expect(icon).toBeInTheDocument();
@@ -34,7 +36,9 @@ describe('PasswordInput', () => {
         isDisabled={false}
         testId="password"
         placeholder="Password"
-        icon={<EmailIcon />} name={'Password'}      />
+        icon={<EmailIcon />}
+        name={'Password'}
+      />
     );
     const input = screen.getByPlaceholderText('Password');
     expect(input).toBeInTheDocument();
@@ -49,7 +53,7 @@ describe('PasswordInput', () => {
         testId="password"
         placeholder="Password"
         icon={<EmailIcon />}
-        name={'Password'} 
+        name={'Password'}
       />
     );
     const input = screen.getByPlaceholderText('Password');
@@ -65,7 +69,7 @@ describe('PasswordInput', () => {
         testId="password"
         placeholder="Password"
         icon={<EmailIcon />}
-        name={'Password'} 
+        name={'Password'}
       />
     );
     const input = screen.getByTestId('password');
@@ -81,7 +85,7 @@ describe('PasswordInput', () => {
         testId="password"
         placeholder="Password"
         icon={<EmailIcon />}
-        name={'Password'} 
+        name={'Password'}
       />
     );
     const input = screen.getByPlaceholderText('Password');

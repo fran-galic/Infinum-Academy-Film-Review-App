@@ -16,7 +16,7 @@ describe('ReviewForm', () => {
 
   //u ovom slucaju star-rating
   it('should render rating component', () => {
-    render(<ReviewForm show_id={''}  />);
+    render(<ReviewForm show_id={''} />);
     const starRating = screen.getByTestId('star-rating');
     expect(starRating).toBeInTheDocument();
   });

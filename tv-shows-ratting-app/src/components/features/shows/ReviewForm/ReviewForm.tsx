@@ -1,11 +1,9 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Box,
   Button,
-  Input,
-  Stack,
   Textarea,
   Text,
   Flex,
@@ -14,7 +12,7 @@ import {
   FormErrorMessage,
 } from '@chakra-ui/react';
 import { useForm, Controller } from 'react-hook-form';
-import { ICreateReviewData, IReview } from '@/typings/Review.type';
+import { ICreateReviewData } from '@/typings/Review.type';
 import useSWRMutation from 'swr/mutation';
 import { swrKeys } from '@/fetchers/swrKeys';
 import { postReview } from '@/mutation/reviews';

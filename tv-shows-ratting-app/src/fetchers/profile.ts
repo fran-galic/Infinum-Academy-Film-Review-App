@@ -12,7 +12,7 @@ export interface IUser {
 
 export async function getProfileData(
   url: string,
-  { arg }: { arg?: any } = {}
+  {}: { arg?: any } = {}
 ): Promise<IUserDataResponse> {
   const result = await fetcher<IUserDataResponse>(url, {
     method: 'GET',

@@ -39,7 +39,7 @@ export const PasswordInput = forwardRef(
             color="white"
             _placeholder={{ color: 'white' }}
             borderColor={error ? 'pink' : 'white'}
-            borderWidth={2} // Dodano svojstvo za deblji obrub
+            borderWidth={2}
             _hover={{ borderColor: error ? 'pink' : 'white' }}
             _focus={{
               borderColor: error ? 'pink' : 'white',

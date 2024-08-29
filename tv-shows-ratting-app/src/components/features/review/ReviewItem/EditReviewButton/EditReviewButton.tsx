@@ -34,7 +34,7 @@ export const EditReviewButton = ({
     {
       onSuccess: () => {
         //ukoliko si uspio postat na server novi Review, pozovi mutate koji ce revliditirat stvari u zajednickom SWR cashu i samim time ce se stranica re Renderat
-        console.log('Reviews se patchao');
+        //console.log('Reviews se patchao');
         mutate();
       },
     }

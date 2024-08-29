@@ -1,6 +1,5 @@
 'use client';
 
-import { SiteLogo } from '@/components/core/SiteLogo/SiteLogo';
 import { Flex, Spinner, Text } from '@chakra-ui/react';
 
 export const LoadingScreen = () => {

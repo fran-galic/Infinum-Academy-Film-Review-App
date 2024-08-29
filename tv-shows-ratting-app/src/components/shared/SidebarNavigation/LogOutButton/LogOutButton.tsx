@@ -1,9 +1,5 @@
-// !!! treba jos rejsit onu jendu stavr sa navigacijama i sa local storgae da cisitti smao odgovarjauce podatke
-
 import {
-  Box,
   Button,
-  Flex,
   Modal,
   ModalBody,
   ModalContent,
@@ -15,7 +11,6 @@ import {
 import { useRouter } from 'next/navigation';
 
 export const LogOutButton = () => {
-  //za Modal prilikom Log out-a
   const { isOpen, onOpen, onClose } = useDisclosure();
   const router = useRouter();
 
@@ -51,7 +46,6 @@ export const LogOutButton = () => {
             </Button>
             <Button
               variant="ghost"
-              // Trebat cu ispravit   !!!!     -> problme za bolje koristenje swr i swrMutaiton da s ene krostie u isto vrijeme
               onClick={() => {
                 localStorage.removeItem('userHeaders');
                 localStorage.removeItem('user-id');

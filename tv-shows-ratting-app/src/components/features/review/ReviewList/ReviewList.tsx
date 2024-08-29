@@ -1,8 +1,8 @@
 'use client';
 
 import React, { useState } from 'react';
-import { IReview, IReviewList } from '@/typings/Review.type';
-import { Stack, Button, Flex, Text, IconButton } from '@chakra-ui/react';
+import { IReviewList } from '@/typings/Review.type';
+import { Flex, Text, IconButton } from '@chakra-ui/react';
 import { ReviewItem } from '../ReviewItem/ReviewItem';
 import { mutate } from 'swr';
 import { swrKeys } from '@/fetchers/swrKeys';
@@ -42,7 +42,6 @@ export const ReviewList = ({ reviewList, show_id }: IReviewListProps) => {
           <ReviewItem
             key={index}
             review={review}
-            //pitanje je dlai to i tkaode rmutira podatke, mislim d abi trbealo raditi
             mutate={() => {
               return mutate(swrKeys.allReviews(show_id, 1, 100));
             }}

@@ -2,7 +2,6 @@ import { MobileNavigation } from '@/components/shared/MobileNavigation/MobileNav
 import { SidebarNavigation } from '@/components/shared/SidebarNavigation/SidebarNavigation';
 import { Box, Flex, Show, Stack } from '@chakra-ui/react';
 
-//kako bi se postavila odgovarajuca boja na neki token?
 export default function RootLayout({
   children,
 }: Readonly<{

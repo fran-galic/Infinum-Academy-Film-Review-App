@@ -1,15 +1,7 @@
 'use client';
 
 import { IShow } from '@/typings/Show.type';
-import {
-  Flex,
-  Button,
-  Text,
-  Stack,
-  IconButton,
-  useMediaQuery,
-  useBreakpointValue,
-} from '@chakra-ui/react';
+import { Flex, Text, IconButton } from '@chakra-ui/react';
 import { ShowCard } from '../ShowCard/ShowCard';
 import { ChevronLeftIcon, ChevronRightIcon } from '@chakra-ui/icons';
 

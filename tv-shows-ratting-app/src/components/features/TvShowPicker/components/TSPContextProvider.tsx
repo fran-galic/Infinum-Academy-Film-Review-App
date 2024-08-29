@@ -1,4 +1,3 @@
-import { LoadingScreen } from '@/components/shared/LoadingScreen/LoadingScreen';
 import { getShows, IShowsResponse } from '@/fetchers/shows';
 import { swrKeys } from '@/fetchers/swrKeys';
 import { IShow } from '@/typings/Show.type';
@@ -11,7 +10,6 @@ interface ITvShowPickerContext {
   setCurrentStep: (newStep: number) => void;
   rankedShows: Array<IShow>;
   setRankedShows: (newRankedShows: Array<IShow>) => void;
-  //ovo dvoje cu jos vidit jel mi treba
   tourSize: number;
   setTourSize: (newTourSize: number) => void;
 
@@ -42,7 +40,6 @@ export const TSPContextProvider = ({
   );
 
   if (isLoading) {
-    //vrati gumb ali ne raid
     return (
       <Button onClick={() => {}} fontSize={4}>
         Show picker

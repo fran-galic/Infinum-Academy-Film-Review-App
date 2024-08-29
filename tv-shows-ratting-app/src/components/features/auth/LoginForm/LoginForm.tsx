@@ -1,21 +1,9 @@
 /* eslint-disable react/no-unescaped-entities */
 'use client';
+
 import React, { useState } from 'react';
-import {
-  Card,
-  CardBody,
-  Flex,
-  chakra,
-  FormControl,
-  InputGroup,
-  InputLeftElement,
-  Input,
-  Button,
-  Text,
-  Spinner,
-  FormErrorMessage,
-} from '@chakra-ui/react';
-import { EmailIcon, LockIcon } from '@chakra-ui/icons';
+import { Flex, chakra, Button, Text, Spinner } from '@chakra-ui/react';
+import { LockIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import { useForm } from 'react-hook-form';
 import { swrKeys } from '@/fetchers/swrKeys';

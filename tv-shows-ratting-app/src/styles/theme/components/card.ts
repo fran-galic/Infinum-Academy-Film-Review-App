@@ -6,12 +6,11 @@ const { defineMultiStyleConfig } = createMultiStyleConfigHelpers(
 );
 
 export const Card = defineMultiStyleConfig({
-  //defolut nije potreban jer su siv cardovi jako razliciti
   variants: {
     showCard: {
       container: {
-        width: { base: '90%', sm: '165px' }, // Responsive width
-        height: { base: 'auto', sm: '250px' }, // Responsive height
+        width: { base: '90%', sm: '165px' },
+        height: { base: 'auto', sm: '250px' },
         borderRadius: '2xl',
         color: 'purple',
         overflow: 'hidden',
@@ -29,9 +28,6 @@ export const Card = defineMultiStyleConfig({
         bg: 'purple',
         fontSize: 'xs',
         p: '2',
-      },
-      body: {
-        // u ovom slucaju netreba nista
       },
     },
     ShowDetailsCard: {

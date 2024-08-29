@@ -1,6 +1,5 @@
 import { LoadingScreen } from '@/components/shared/LoadingScreen/LoadingScreen';
 import { ShowsList } from '@/components/shared/shows/ShowsList/ShowsList';
-//import { getTopRatedShows } from "@/fetchers/shows";
 import { swrKeys } from '@/fetchers/swrKeys';
 import useSWR from 'swr';
 import { getTopRatedShows } from '@/fetchers/shows';

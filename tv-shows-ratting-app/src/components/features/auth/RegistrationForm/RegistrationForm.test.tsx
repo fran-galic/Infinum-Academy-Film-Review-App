@@ -9,7 +9,7 @@
  * Ima ih još ali mislim da je za sada ovo dosta
  */
 
-import { render, screen, fireEvent, waitFor } from '@testing-library/react';
+import { render, screen } from '@testing-library/react';
 import { RegistrationForm } from './RegistrationForm';
 
 describe('RegistrationForm', () => {

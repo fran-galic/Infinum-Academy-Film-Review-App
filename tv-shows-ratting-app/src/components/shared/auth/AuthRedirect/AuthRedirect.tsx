@@ -9,8 +9,8 @@ interface IAuthRedirectProps {
 }
 
 export const AuthRedirect = ({ to, condition }: IAuthRedirectProps) => {
-  // sluzi nam za prsitup ruteru i upravljnu navigaicjama unutar apliakcije
-  // pruza informaicje o trenutnoj ruti i nudi mogucnosti navigaicje izmedu ruta u aplikaicji
+  // služi za pristup ruteru i upravljanje navigacijom unutar aplikacije
+  // Pruža informacije o trenutnoj ruti i omogućuje navigaciju među različitim rutama unutar aplikacije.
   const router = useRouter();
 
   useEffect(() => {

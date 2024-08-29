@@ -4,16 +4,13 @@ import { IReview } from '@/typings/Review.type';
 import {
   Avatar,
   Box,
-  Button,
   Card,
   CardBody,
   Flex,
   IconButton,
   Menu,
   MenuButton,
-  MenuItem,
   MenuList,
-  Stack,
   Text,
 } from '@chakra-ui/react';
 import { StarRating } from '../StarRating/StarRating';
@@ -21,7 +18,6 @@ import useSWRMutation from 'swr/mutation';
 import { swrKeys } from '@/fetchers/swrKeys';
 import { delteReview } from '@/mutation/reviews';
 import { EditReviewButton } from './EditReviewButton/EditReviewButton';
-import { ChevronDownIcon, TriangleDownIcon } from '@chakra-ui/icons';
 import { Icon } from '@chakra-ui/react';
 import { HiDotsVertical } from 'react-icons/hi';
 import { DeleteReviewButton } from './DeleteReviewButton/DeleteReviewButton';
@@ -39,7 +35,7 @@ export const ReviewItem = ({ review, mutate, show_id }: IReviewItemProps) => {
     delteReview,
     {
       onSuccess: () => {
-        console.log('Reviews se brisu i onda revaliditiraiju');
+        //console.log('Reviews se brisu i onda revaliditiraiju');
         mutate();
       },
     }

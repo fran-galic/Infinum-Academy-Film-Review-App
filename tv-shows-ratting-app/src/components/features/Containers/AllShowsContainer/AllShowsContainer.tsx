@@ -4,7 +4,7 @@ import { getShows } from '@/fetchers/shows';
 import { swrKeys } from '@/fetchers/swrKeys';
 import useSWR from 'swr';
 import { useState } from 'react';
-import { Box, useBreakpointValue } from '@chakra-ui/react';
+import { useBreakpointValue } from '@chakra-ui/react';
 
 export interface IgetSignInMutatorParams {
   page: string;
@@ -33,7 +33,7 @@ export const AllShowsContainer = () => {
       shows={data.shows}
       currentPage={currentPage}
       setCurrentPage={setCurrentPage}
-      totalItems={/* data.totalItems */ 100} //ova vrijendost ne psootji ali sma ja nasao da je 100 za sad
+      totalItems={/* data.totalItems */ 100} //ova vrijendost ne posotoji ali sam ja nasao da je 100 za sad
       itemsPerPage={itemsPerPage}
     />
   );

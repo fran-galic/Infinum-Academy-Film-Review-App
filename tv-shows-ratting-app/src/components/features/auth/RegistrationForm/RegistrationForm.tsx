@@ -3,18 +3,14 @@
 
 import React, { useState } from 'react';
 import {
-  Card,
-  CardBody,
   Flex,
   chakra,
-  FormControl,
   Button,
   Text,
   Spinner,
-  FormErrorMessage,
   useMediaQuery,
 } from '@chakra-ui/react';
-import { EmailIcon, LockIcon } from '@chakra-ui/icons';
+import { LockIcon } from '@chakra-ui/icons';
 import NextLink from 'next/link';
 import { useForm } from 'react-hook-form';
 import useSWRMutation from 'swr/mutation';

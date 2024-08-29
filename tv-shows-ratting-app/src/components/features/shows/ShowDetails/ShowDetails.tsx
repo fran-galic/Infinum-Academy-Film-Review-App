@@ -6,13 +6,11 @@ import {
   Card,
   CardBody,
   Heading,
-  Stack,
   Text,
   Image,
   Flex,
   Box,
 } from '@chakra-ui/react';
-import { wrap } from 'module';
 
 export interface IShowDetailsProps {
   show: IShow;

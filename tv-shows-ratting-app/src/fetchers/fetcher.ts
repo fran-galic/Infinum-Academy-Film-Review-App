@@ -4,11 +4,11 @@ export async function fetcher<T>(
 ): Promise<T | undefined> {
   let data: T | undefined;
   const oldHeadersString = localStorage.getItem('userHeaders');
-  console.log('Headeri iz LocalStorage: ', oldHeadersString);
+  //console.log('Headeri iz LocalStorage: ', oldHeadersString);
   const oldHeaders = oldHeadersString
     ? JSON.parse(oldHeadersString)
     : undefined;
-  console.log(oldHeaders);
+  //console.log(oldHeaders);
 
   try {
     const response = await fetch(input, {
@@ -23,7 +23,7 @@ export async function fetcher<T>(
     // Provjeravamo je li odgovor uspješan
     if (!response.ok) {
       const errorText = await response.text(); // Pokušaj dobiti detalje o grešci iz odgovora
-      console.error(`Greška u odgovoru: ${errorText}`);
+      //console.error(`Greška u odgovoru: ${errorText}`);
       throw new Error(`Response status: ${response.status}, ${errorText}`);
     }
 
@@ -33,7 +33,7 @@ export async function fetcher<T>(
     if (!isNoContent) {
       // Čekamo na parsiranje tijela odgovora kao JSON
       data = await response.json();
-      console.log('Podaci iz tijela odgovora: ', data);
+      //console.log('Podaci iz tijela odgovora: ', data);
     }
 
     // Ažuriramo lokalnu pohranu novim zaglavljima ako su prisutna
@@ -47,7 +47,7 @@ export async function fetcher<T>(
 
     // Provjera i ažuriranje samo ako postoje novi podaci u zaglavljima
     if (newHeaders['access-token']) {
-      console.log('Podaci iz Headera odgovora: ', newHeaders);
+      //console.log('Podaci iz Headera odgovora: ', newHeaders);
       localStorage.setItem('userHeaders', JSON.stringify(newHeaders));
     }
   } catch (error) {

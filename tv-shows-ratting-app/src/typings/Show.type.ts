@@ -3,6 +3,6 @@ export interface IShow {
   description: string;
   average_rating?: number;
   image_url?: string;
-  id: string /* za sada opcionalan */;
+  id: string; //opcionalan
   no_of_reviews: number;
 }

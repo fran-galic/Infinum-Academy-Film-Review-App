@@ -1,4 +1,4 @@
-import { Box, Flex, Image, Text } from '@chakra-ui/react';
+import { Flex } from '@chakra-ui/react';
 import { TSPContext } from './TSPContextProvider';
 import { PickerCard } from '../PickerCard/PickerCard';
 import { useContext, useEffect, useState } from 'react';

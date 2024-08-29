@@ -9,7 +9,7 @@
 
 import { render, screen, fireEvent } from '@testing-library/react';
 import { PasswordInput } from './PasswordInput';
-import { EmailIcon, ViewIcon, ViewOffIcon } from '@chakra-ui/icons';
+import { EmailIcon } from '@chakra-ui/icons';
 
 describe('PasswordInput', () => {
   // Test za renderiranje ikone

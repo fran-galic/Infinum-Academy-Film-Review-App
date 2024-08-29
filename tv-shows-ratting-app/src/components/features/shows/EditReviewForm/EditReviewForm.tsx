@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React from 'react';
 import {
   Box,
   Button,
@@ -15,15 +15,7 @@ import {
 } from '@chakra-ui/react';
 import { StarRating } from '../../review/StarRating/StarRating';
 import { useForm, Controller } from 'react-hook-form';
-import {
-  ICreateReviewData,
-  IEditReviewData,
-  IReview,
-} from '@/typings/Review.type';
-import useSWRMutation from 'swr/mutation';
-import { swrKeys } from '@/fetchers/swrKeys';
-import { postReview } from '@/mutation/reviews';
-import { mutate } from 'swr';
+import { IEditReviewData } from '@/typings/Review.type';
 
 interface IEditReviewFormProps {
   show_id: string;
@@ -71,7 +63,7 @@ export const EditReviewForm = ({
     setValue('description', '');
 
     await trigger(editedReviewData);
-    console.log('Patching the review has finished');
+    //console.log('Patching the review has finished');
     onClose();
   };
 
@@ -93,7 +85,7 @@ export const EditReviewForm = ({
           {...register('description', { required: 'Description is required' })}
           isDisabled={isSubmitting}
           borderColor="purple"
-          borderWidth={2} // Dodano svojstvo za deblji obrub
+          borderWidth={2}
           _hover={{ borderColor: 'purple' }}
           _focus={{ borderColor: 'purple', boxShadow: 'none' }}
           _invalid={{ borderColor: 'pink' }}

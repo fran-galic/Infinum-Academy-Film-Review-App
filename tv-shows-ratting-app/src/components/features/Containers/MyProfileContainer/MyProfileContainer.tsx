@@ -27,7 +27,7 @@ export const MyProfileContainer = () => {
     string | ArrayBuffer | null
   >();
 
-  //svaki put kad se stranica reolda izbriis sliku
+  //svaki put kad se stranica reolda izbrisi sliku
   useEffect(() => {
     setSelectedImage(undefined);
   }, []);

@@ -7,7 +7,7 @@ import {
 
 export async function getReviews(
   url: string,
-  { arg }: { arg?: any } = {}
+  {}: { arg?: any } = {}
 ): Promise<IReviewList> {
   const result = await fetcher<IReviewList>(url, {
     method: 'GET',

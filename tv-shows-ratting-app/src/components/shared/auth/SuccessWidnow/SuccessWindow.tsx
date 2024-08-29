@@ -1,12 +1,4 @@
-import {
-  Button,
-  Card,
-  CardBody,
-  Center,
-  Flex,
-  Stack,
-  Text,
-} from '@chakra-ui/react';
+import { Button, Card, CardBody, Center, Stack, Text } from '@chakra-ui/react';
 import NextLink from 'next/link';
 
 interface ISuccessWindow {

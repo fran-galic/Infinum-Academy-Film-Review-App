@@ -52,11 +52,17 @@ Rad na ovom projektu omogućio mi je da savladam:
    ```
 
 2. Instalirajte potrebne pakete:
+
+   ```bash
    cd film-series-review-platform
    npm install
+   ```
 
 3. Pokrenite razvojni server:
+
+   ```bash
    npm run dev
+   ```
 
 4. Otvorite http://localhost:3000 u vašem pregledniku.
 

@@ -6,7 +6,7 @@ This is a web application for browsing movies and series and writing reviews for
 
 ## Demo
 
-Check out the live version of the application [here](LINK_TO_LIVE_SITE).
+Check out the live version of the application [here](https://infinum-academy-film-review-app.vercel.app/).
 
 ## Key Technologies and Tools
 

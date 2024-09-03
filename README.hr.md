@@ -6,7 +6,7 @@ Ovo je web aplikacija za pregledavanje filmova i serija te pisanje recenzija za 
 
 ## Demo
 
-Pogledajte live verziju aplikacije [ovdje](LINK_NA_STRANICU).
+Pogledajte live verziju aplikacije [ovdje](https://infinum-academy-film-review-app.vercel.app/).
 
 ## Ključne Tehnologije i Alati
 

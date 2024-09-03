@@ -1,41 +1,64 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+# Film & Series Review Platform
 
-## Getting Started
+Ovo je web aplikacija za pregledavanje filmova i serija te pisanje recenzija za iste. Razvijena kao završni projekt u sklopu Infinum akademije, aplikacija koristi najmodernije tehnologije i prakse frontend razvoja koristeći React, Next.js, i TypeScript.
 
-First, run the development server:
+## Demo
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
+Pogledajte live verziju aplikacije [ovdje](LINK_NA_STRANICU).
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+## Ključne Tehnologije i Alati
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+- **Next.js**: Framework za server-side rendering i statičke stranice, omogućava optimizirani SEO i brže učitavanje.
+- **React**: JavaScript biblioteka za izradu dinamičkih korisničkih sučelja.
+- **React Hooks**: `useState`, `useEffect`, `useContext`, `useMemo` za upravljanje stanjem i efektima u aplikaciji.
+- **Chakra UI**: Alat za dizajn i razvoj responzivnih web sučelja, olakšava brzi razvoj i estetski dizajn.
+- **TypeScript**: Statički tipizirani superset JavaScript-a, povećava sigurnost i održivost koda.
+- **SWR** i **SWR Mutation**: Biblioteka za fetchanje podataka sa strategijom cacheiranja i optimističkim update-ovima.
+- **React Testing Library** i **Jest**: Alati za testiranje komponenti i aplikacija, osiguravaju kvalitetu i pouzdanost koda.
+- **Prettier** i **ESLint**: Alati za automatsko formatiranje i osiguravanje kvalitete koda.
+- **Form Control (useForm)**: Upravljanje unosima u formama i validacija korištenjem React Hook Form.
 
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
+## Značajke Projekta
 
-## Learn More
+- **Prijava i Registracija**: Korisnici se mogu prijaviti i registrirati te pristupiti personaliziranom profilu.
+- **Personalizacija Profila**: Korisnici mogu dodati ili promijeniti profilnu sliku i prilagoditi svoj profil prema željama.
+- **Pregled Filmova i Serija**: Mogućnost pregledavanja opisa, ocjena, i recenzija za svaku seriju ili film.
+- **Pisanje i Uređivanje Recenzija**: Korisnici mogu ostaviti recenzije za filmove i serije, kao i uređivati ili brisati vlastite recenzije.
+- **Prikaz Recenzija Ostalih Korisnika**: Pogledajte recenzije i ocjene drugih korisnika.
+- **Algoritam za Preporuke**: Implementiran algoritam za pronalaženje optimalnog filma za gledanje za svaku večer, na temelju preferencija korisnika.
+- **Top Lista Filmova i Serija**: Pregled najbolje ocijenjenih filmova i serija prema korisničkim ocjenama.
+- **Ocjenjivanje sa Zvjezdicama**: Mogućnost ocjenjivanja filmova i serija sa zvjezdicama, doprinosi ukupnoj ocjeni.
 
-To learn more about Next.js, take a look at the following resources:
+## Što Sam Naučio
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Rad na ovom projektu omogućio mi je da savladam:
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
+1. **Frontend razvoj s Reactom i Next.js**: Korištenje modernih alata i tehnika za izradu responzivnih i dinamičkih web aplikacija.
+2. **Integracija s Backend API-jem**: Dohvaćanje i prikaz podataka koristeći REST API-je i optimizirane strategije za upravljanje podacima.
+3. **Converting Design to Code**: Kako pretvoriti dizajn iz Figma alata u funkcionalni kod koristeći HTML, CSS, i JavaScript.
+4. **State Management i Data Fetching**: Efikasno upravljanje stanjem aplikacije i dohvaćanje podataka koristeći React Hooks i SWR.
+5. **Pisanje Čistog i Održivog Koda**: Održavanje konzistentnog i kvalitetnog koda korištenjem alata poput Prettier i ESLint.
+6. **Testiranje aplikacija**: Implementacija sveobuhvatnih testova za komponente i integraciju pomoću Jest i React Testing Library.
+7. **TypeScript**: Korištenje statičkog tipiziranja za povećanje sigurnosti i održivosti koda.
 
-## Deploy on Vercel
+## Kako Pokrenuti Projekt
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+1. Klonirajte repozitorij:
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+   ```bash
+   git clone https://github.com/vaše_korisničko_ime/film-series-review-platform.git
 
+   ```
 
+2. Instalirajte potrebne pakete:
+   cd film-series-review-platform
+   npm install
 
+3. Pokrenite razvojni server:
+   npm run dev
 
+4. Otvorite http://localhost:3000 u vašem pregledniku.
 
+## Autori
+
+Fran Galić - Vaš GitHub profil

@@ -40,7 +40,7 @@ export const ReviewForm = ({ show_id }: IReviewFormProps) => {
 
   const { trigger } = useSWRMutation(swrKeys.reviews, postReview, {
     onSuccess: () => {
-      console.log('Reviews se revaliditiraju');
+      //console.log('Reviews se revaliditiraju');
       mutate(swrKeys.allReviews(show_id, 1, 100));
     },
   });
@@ -56,7 +56,7 @@ export const ReviewForm = ({ show_id }: IReviewFormProps) => {
     setValue('description', '');
 
     await trigger(newReviewData);
-    console.log('Adding');
+    // console.log('Adding');
   };
 
   return (

@@ -48,8 +48,7 @@ Rad na ovom projektu omogućio mi je da savladam:
 1. Klonirajte repozitorij:
 
    ```bash
-   git clone https://github.com/vaše_korisničko_ime/film-series-review-platform.git
-
+   git clone https://github.com/fran-galic/Infinum-Academy-Film-Review-App.git
    ```
 
 2. Instalirajte potrebne pakete:
@@ -63,4 +62,4 @@ Rad na ovom projektu omogućio mi je da savladam:
 
 ## Autori
 
-Fran Galić - Vaš GitHub profil
+Fran Galić - [GitHub Profile](https://github.com/fran-galic)

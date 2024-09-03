@@ -1,64 +1,61 @@
 # Film & Series Review Platform
 
-Ovo je web aplikacija za pregledavanje filmova i serija te pisanje recenzija za iste. Razvijena kao završni projekt u sklopu Infinum akademije, aplikacija koristi najmodernije tehnologije i prakse frontend razvoja koristeći React, Next.js, i TypeScript.
+_This README is also available in [Croatian](README.hr.md)._
+
+This is a web application for browsing movies and series and writing reviews for them. Developed as a final project within the Infinum Academy, the application utilizes the latest technologies and frontend development practices using React, Next.js, and TypeScript.
 
 ## Demo
 
-Pogledajte live verziju aplikacije [ovdje](LINK_NA_STRANICU).
+Check out the live version of the application [here](LINK_TO_LIVE_SITE).
 
-## Ključne Tehnologije i Alati
+## Key Technologies and Tools
 
-- **Next.js**: Framework za server-side rendering i statičke stranice, omogućava optimizirani SEO i brže učitavanje.
-- **React**: JavaScript biblioteka za izradu dinamičkih korisničkih sučelja.
-- **React Hooks**: `useState`, `useEffect`, `useContext`, `useMemo` za upravljanje stanjem i efektima u aplikaciji.
-- **Chakra UI**: Alat za dizajn i razvoj responzivnih web sučelja, olakšava brzi razvoj i estetski dizajn.
-- **TypeScript**: Statički tipizirani superset JavaScript-a, povećava sigurnost i održivost koda.
-- **SWR** i **SWR Mutation**: Biblioteka za fetchanje podataka sa strategijom cacheiranja i optimističkim update-ovima.
-- **React Testing Library** i **Jest**: Alati za testiranje komponenti i aplikacija, osiguravaju kvalitetu i pouzdanost koda.
-- **Prettier** i **ESLint**: Alati za automatsko formatiranje i osiguravanje kvalitete koda.
-- **Form Control (useForm)**: Upravljanje unosima u formama i validacija korištenjem React Hook Form.
+- **Next.js**: Framework for server-side rendering and static site generation, enabling optimized SEO and faster loading times.
+- **React**: A JavaScript library for building dynamic user interfaces.
+- **React Hooks**: `useState`, `useEffect`, `useContext`, `useMemo` for managing state and effects in the application.
+- **Chakra UI**: A design and development tool for building responsive web interfaces, facilitating quick development and aesthetic design.
+- **TypeScript**: A statically typed superset of JavaScript that enhances code safety and maintainability.
+- **SWR** and **SWR Mutation**: A library for data fetching with a caching strategy and optimistic updates.
+- **React Testing Library** and **Jest**: Tools for testing components and applications, ensuring code quality and reliability.
+- **Prettier** and **ESLint**: Tools for automatic formatting and maintaining code quality.
+- **Form Control (useForm)**: Managing form inputs and validation using React Hook Form.
 
-## Značajke Projekta
+## Project Features
 
-- **Prijava i Registracija**: Korisnici se mogu prijaviti i registrirati te pristupiti personaliziranom profilu.
-- **Personalizacija Profila**: Korisnici mogu dodati ili promijeniti profilnu sliku i prilagoditi svoj profil prema željama.
-- **Pregled Filmova i Serija**: Mogućnost pregledavanja opisa, ocjena, i recenzija za svaku seriju ili film.
-- **Pisanje i Uređivanje Recenzija**: Korisnici mogu ostaviti recenzije za filmove i serije, kao i uređivati ili brisati vlastite recenzije.
-- **Prikaz Recenzija Ostalih Korisnika**: Pogledajte recenzije i ocjene drugih korisnika.
-- **Algoritam za Preporuke**: Implementiran algoritam za pronalaženje optimalnog filma za gledanje za svaku večer, na temelju preferencija korisnika.
-- **Top Lista Filmova i Serija**: Pregled najbolje ocijenjenih filmova i serija prema korisničkim ocjenama.
-- **Ocjenjivanje sa Zvjezdicama**: Mogućnost ocjenjivanja filmova i serija sa zvjezdicama, doprinosi ukupnoj ocjeni.
+- **Sign Up and Login**: Users can sign up and log in to access their personalized profiles.
+- **Profile Personalization**: Users can add or change their profile picture and customize their profile according to their preferences.
+- **Browse Movies and Series**: Ability to view descriptions, ratings, and reviews for each series or movie.
+- **Write and Edit Reviews**: Users can leave reviews for movies and series, as well as edit or delete their own reviews.
+- **View Other Users' Reviews**: See reviews and ratings from other users.
+- **Recommendation Algorithm**: An algorithm implemented to find the optimal movie for watching each evening based on user preferences.
+- **Top Rated Movies and Series**: View a list of the highest-rated movies and series based on user ratings.
+- **Star Rating System**: Ability to rate movies and series with stars, contributing to the overall rating.
 
-## Što Sam Naučio
+## What I Learned
 
-Rad na ovom projektu omogućio mi je da savladam:
+Working on this project allowed me to master:
 
-1. **Frontend razvoj s Reactom i Next.js**: Korištenje modernih alata i tehnika za izradu responzivnih i dinamičkih web aplikacija.
-2. **Integracija s Backend API-jem**: Dohvaćanje i prikaz podataka koristeći REST API-je i optimizirane strategije za upravljanje podacima.
-3. **Converting Design to Code**: Kako pretvoriti dizajn iz Figma alata u funkcionalni kod koristeći HTML, CSS, i JavaScript.
-4. **State Management i Data Fetching**: Efikasno upravljanje stanjem aplikacije i dohvaćanje podataka koristeći React Hooks i SWR.
-5. **Pisanje Čistog i Održivog Koda**: Održavanje konzistentnog i kvalitetnog koda korištenjem alata poput Prettier i ESLint.
-6. **Testiranje aplikacija**: Implementacija sveobuhvatnih testova za komponente i integraciju pomoću Jest i React Testing Library.
-7. **TypeScript**: Korištenje statičkog tipiziranja za povećanje sigurnosti i održivosti koda.
+1. **Frontend Development with React and Next.js**: Utilizing modern tools and techniques to build responsive and dynamic web applications.
+2. **Integration with Backend APIs**: Fetching and displaying data using REST APIs and optimized strategies for data management.
+3. **Converting Design to Code**: How to translate designs from Figma into functional code using HTML, CSS, and JavaScript.
+4. **State Management and Data Fetching**: Efficiently managing application state and fetching data using React Hooks and SWR.
+5. **Writing Clean and Maintainable Code**: Maintaining consistent and high-quality code using tools like Prettier and ESLint.
+6. **Application Testing**: Implementing comprehensive tests for components and integration using Jest and React Testing Library.
+7. **TypeScript**: Using static typing to enhance code safety and maintainability.
 
-## Kako Pokrenuti Projekt
+## How to Run the Project
 
-1. Klonirajte repozitorij:
+1. Clone the repository:
 
    ```bash
-   git clone https://github.com/vaše_korisničko_ime/film-series-review-platform.git
-
+   git clone https://github.com/your_username/film-series-review-platform.git
    ```
 
-2. Instalirajte potrebne pakete:
+2. Install the necessary packages:
    cd film-series-review-platform
    npm install
 
-3. Pokrenite razvojni server:
+3. Start the development server:
    npm run dev
 
-4. Otvorite http://localhost:3000 u vašem pregledniku.
-
-## Autori
-
-Fran Galić - Vaš GitHub profil
+4. Open http://localhost:3000 in your browser.
